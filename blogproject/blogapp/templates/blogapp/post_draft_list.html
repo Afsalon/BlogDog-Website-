@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+{% extends 'blogapp/base.html' %}
+{% block body_block %}
+<h1 class='fontedit'>List of All The Drafts</h1>
+{% for post in posts %}
+<h1><a href="{% url 'detail_page' pk=post.pk %}">{{post.title}}</a></h1>
+<p>{{post.created_date|date:'D M Y'}}</p>
+{% endfor %}
+{% endblock %}
